@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zobimaru91.github.io/sitemap.xml
