@@ -42,6 +42,12 @@ Everything still missing is marked in **yellow with a dashed border** on the pag
 - **Automation chapter:** one screenshot, GIF or short video per tool (6 slots), and measured time saved where you have a real number.
 - **Certifications:** add any you earn (ISO 19650, Autodesk).
 
+### Project pop-ups (gallery + full description)
+
+Clicking a project card opens a pop-up. Its content lives in `assets/js/projects.js`: one entry per project, keyed by the card's `data-project="..."` id, with `title`, `images` (names in `assets/img`, without `-800.webp`/`-1600.webp`), `meta`, `desc` and `bullets`. Text in `[square brackets]` shows as a yellow placeholder. To add renders, generate them with `site_images.py` (below) and add their names to the project's `images` list.
+
+Each project also has its own link to share, e.g. `https://zobimaru91.github.io/#project-uqda` opens Al Uqda directly. Ids: `uqda`, `ssdl`, `ose`, `ghaf`, `pja`, `cpk`, `amaala`, `khalifa`, `meryam`, `bjelasnica`, `breka`, `vrace`.
+
 ### Adding an image
 
 1. Add the source to `IMAGES` in `D:\posao\CV\cloud\tools\site_images.py` and run:
