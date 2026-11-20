@@ -247,6 +247,27 @@ ul, ol, dl { margin: 0; padding: 0; }
 }
 .tool .media-slot { min-height: 160px; }
 
+/* ---------- Downloads ---------- */
+.chapter__intro .btn { margin-top: 12px; }
+.chapter--downloads { border-top: 1px solid var(--line); }
+.wip {
+  display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: #6b5600; background: var(--ph-bg); border: 1px dashed var(--ph-line); padding: 3px 8px; margin-left: 4px; vertical-align: 2px;
+}
+.dl-group + .dl-group { margin-top: clamp(48px, 6vw, 72px); }
+.dl-group__title { font-size: clamp(24px, 2.6vw, 32px); padding-bottom: 18px; margin-bottom: 24px; border-bottom: 1px solid var(--ink); }
+.dl-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 640px) { .dl-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .dl-grid { grid-template-columns: repeat(3, 1fr); } }
+.dl-card { display: flex; flex-direction: column; align-items: flex-start; border: 1px solid var(--line); padding: 26px; }
+.dl-card h4 { font-size: 22px; margin-bottom: 10px; }
+.dl-card > p:not(.tool__tag) { font-size: 15px; color: var(--ink-2); }
+.dl-meta { display: grid; grid-template-columns: 80px 1fr; gap: 6px 12px; font-size: 14px; width: 100%; margin: 4px 0 22px; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.dl-meta dt { color: var(--ink-3); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; padding-top: 3px; }
+.dl-meta dd { margin: 0; }
+.dl-card .btn { margin-top: auto; }
+.btn--disabled, .btn--disabled:hover { background: var(--tint); color: var(--ink-3); border-color: var(--line); cursor: not-allowed; }
+
 /* ---------- Experience ---------- */
 .timeline { list-style: none; border-top: 1px solid var(--ink); }
 .timeline > li { display: grid; grid-template-columns: 1fr; gap: 6px 48px; padding: 32px 0; border-bottom: 1px solid var(--line); }

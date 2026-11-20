@@ -73,6 +73,15 @@ Replace the whole `<div class="media-slot">…</div>` with one of these:
 
 Keep each file under ~5 MB. GitHub's file limit is 100 MB and a Pages site should stay under 1 GB; longer videos are better on YouTube/Vimeo, embedded with an `<iframe>`.
 
+### Publishing a download (plugins / Dynamo scripts)
+
+The **Downloads** section (`id="downloads"`) has cards for Revit plugins, Navisworks plugins and Dynamo scripts, each showing a disabled "Coming soon" button.
+
+- **Dynamo scripts:** zip the `.dyn` files, put the zip in a `downloads/` folder, and replace the card's `<span class="btn btn--disabled" …>Coming soon</span>` with `<a class="btn" href="downloads/dynamo-scripts.zip" download>Download</a>`.
+- **Plugins:** publish the zipped add-in as a GitHub Release (`gh release create v1.0.0 path\to\plugin.zip --title "…" --notes "…"`) and link the button to the release download URL.
+- Fill in the version and supported Revit/Navisworks versions, and add a card per tool if needed.
+- Before publishing a tool, make sure you're allowed to share it (tools built at work may belong to the employer) and that no project or client data is inside.
+
 ### Updating the CV PDF
 
 The PDF is built from `D:\posao\CV\cloud\tools\content\website_cv.json` with the same scripts as the tailored CVs:
