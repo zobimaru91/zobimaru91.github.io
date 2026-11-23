@@ -83,9 +83,9 @@ Replace the whole `<div class="media-slot">…</div>` with one of these:
 
 Keep each file under ~5 MB. GitHub's file limit is 100 MB and a Pages site should stay under 1 GB; longer videos are better on YouTube/Vimeo, embedded with an `<iframe>`.
 
-### Tools on request (section id `downloads`)
+### Tools catalogue (section id `downloads`)
 
-Plugins and Dynamo scripts are not offered as free downloads. The section has three cards (Revit plugins, Navisworks plugins, Dynamo scripts) with "Request by email" buttons and a "Custom Dynamo scripts & BIM automation" contact panel. The buttons are `mailto:` links with a pre-filled subject; change the email address or subjects there.
+Plugins and Dynamo scripts are not offered as free downloads. The section has three cards (Revit plugins, Navisworks plugins, Dynamo scripts) with disabled "Coming soon" labels (`span.btn.btn--disabled`) until the catalogue of scripts and plugins is ready, plus a "Custom Dynamo scripts & BIM automation" contact panel (a `mailto:` link with a pre-filled subject).
 
 ### Updating the CV PDF
 
