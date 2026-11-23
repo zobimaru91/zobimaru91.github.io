@@ -27,21 +27,39 @@ window.PROJECTS = {
     ]
   },
 
-  ssdl: {
-    title: "SSDL & Environmental Laboratories",
-    images: ["ssdl-1", "ssdl-2", "ssdl-3", "ssdl-4", "ssdl-5", "ssdl-6", "ssdl-7", "ssdl-8", "ssdl-9", "ssdl-10", "ssdl-11", "ssdl-12", "ssdl-13", "ssdl-14", "ssdl-15", "envlab-1", "envlab-2", "envlab-3", "envlab-4", "envlab-5", "envlab-6"],
+  karaana: {
+    title: "Al Karaana Camel Race Track",
+    images: ["karaana-1", "karaana-2", "karaana-3", "karaana-4", "karaana-5", "karaana-6", "karaana-7"],
     meta: [
-      ["Location", "Al-Sailiya & Mesaimeer, Qatar"],
+      ["Location", "Al-Rayyan, Qatar"],
+      ["Role", "BIM Coordinator"],
+      ["Company", "Focus Design Partners (design consultant: masterplanning and design)"],
+      ["Client", "Qatar Building Engineering Company for PWA (Ashghal)"],
+      ["Site", "~14.6 million m² (14,620,187 m²)"],
+      ["Tracks", "Race circuits of 8, 6 and 4 km, a 2 km starting track and an 8.5 km training loop"],
+      ["Buildings", "33: grandstand, veterinary, broadcasting and administration buildings, substations and utility structures"],
+      ["Year", "2025 – present (project initiated 2023)"]
+    ],
+    desc: "A multi-track desert racing complex for elite camel racing and training, set in a 14.6 million m² landscape. The design reinterprets the tradition of camel racing in a contemporary, softly minimal language drawn from Qatari motifs: perforated facades and deep recesses manage light, shade and ventilation in the desert climate. Around the tracks sit spectator, animal-care and operational facilities, with circulation routes, farming zones and corridors for future expansion. Site services include MV/LV power, track and RGBW lighting, AV and security systems, modelled stormwater drainage, irrigation with treated effluent and a foul-sewer network.",
+    bullets: [
+      "BIM coordination for the design team across the complex's buildings and disciplines."
+    ]
+  },
+  ssdl: {
+    title: "SSDL, Secondary Standards Dosimetry Laboratories",
+    images: ["ssdl-1", "ssdl-2", "ssdl-3", "ssdl-4", "ssdl-5", "ssdl-6", "ssdl-7", "ssdl-8", "ssdl-9", "ssdl-10", "ssdl-11", "ssdl-12", "ssdl-13", "ssdl-14", "ssdl-15"],
+    meta: [
+      ["Location", "Al-Sailiya, Qatar"],
       ["Role", "BIM Architectural Coordinator"],
       ["Company", "Focus Design Partners (design consultant)"],
       ["Client", "Qatar Building Engineering Company for PWA (Ashghal)"],
-      ["Building", "~3,500 m² facility on a ~187,000 m² site · 2 basements + ground + 2 floors; plus a ~1,950 m² Environmental Laboratories extension"],
+      ["Building", "~3,500 m² facility on a ~187,000 m² site · 2 basements + ground + 2 floors"],
       ["Model", "LOD 350, issued for approval"],
       ["Value", "~QAR 100m"],
       ["Year", "2025 – present (project initiated 2024)"],
       ["Software", "Revit, Navisworks Manage, BIM 360 / ACC"]
     ],
-    desc: "Qatar's first neutron-calibration facility. The Secondary Standards Dosimetry Laboratories calibrate and verify radiation measurement equipment so that radiation used in medicine and research is safe, accurate and traceable. The plan takes the atom as its idea: a central atrium acts as the nucleus, with four wings for laboratories, research, administration, operations and support, separating public, controlled and high-security zones. Modular laboratory units allow the facility to grow, and deep-set openings in the solid facade give shade and privacy in a contemporary Qatari language. The scope also includes a major extension to the Environmental Laboratories in Mesaimeer.",
+    desc: "Qatar's first neutron-calibration facility. The Secondary Standards Dosimetry Laboratories calibrate and verify radiation measurement equipment so that radiation used in medicine and research is safe, accurate and traceable. The plan takes the atom as its idea: a central atrium acts as the nucleus, with four wings for laboratories, research, administration, operations and support, separating public, controlled and high-security zones. Modular laboratory units allow the facility to grow, and deep-set openings in the solid facade give shade and privacy in a contemporary Qatari language.",
     bullets: [
       "Architectural BIM coordination and cross-discipline clash resolution across architecture, structure, MEP and specialist laboratory systems (shielding, HVAC, controlled environments).",
       "Delivered 4D sequencing and 5D data development to support programme and cost tracking.",
@@ -49,6 +67,22 @@ window.PROJECTS = {
     ]
   },
 
+  envlab: {
+    title: "Environmental Laboratory, Mesaimeer",
+    images: ["envlab-1", "envlab-2", "envlab-3", "envlab-4", "envlab-5", "envlab-6"],
+    meta: [
+      ["Location", "Mesaimeer, Qatar"],
+      ["Role", "BIM Coordinator"],
+      ["Company", "Focus Design Partners (design consultant)"],
+      ["Client", "Qatar Building Engineering Company for PWA (Ashghal)"],
+      ["Scope", "Major extension to the existing Environmental Laboratories, expanding the facility to ~1,950 m²"],
+      ["Year", "2025 – present (project initiated 2024)"]
+    ],
+    desc: "A national environmental laboratory that supports Qatar's environmental monitoring, scientific analysis, pollutant management and public-health protection. The extension adds specialised laboratory spaces with operational, administrative and staff-support areas, laid out around safe, efficient lab workflows and built with responsible materials and environmentally conscious building systems.",
+    bullets: [
+      "BIM coordination for the design team across disciplines."
+    ]
+  },
   ose: {
     title: "OSE, Outfield Spectator Experience",
     images: ["ose-1", "ose-2", "ose-3", "ose-4", "ose-5"],
