@@ -29,21 +29,21 @@ window.PROJECTS = {
 
   ssdl: {
     title: "SSDL & Environmental Laboratories",
-    images: ["ssdl-1", "ssdl-2", "ssdl-3", "ssdl-4", "ssdl-5", "ssdl-6", "envlab-1", "envlab-2", "envlab-3", "envlab-4", "envlab-5", "envlab-6"],
+    images: ["ssdl-1", "ssdl-2", "ssdl-3", "ssdl-4", "ssdl-5", "ssdl-6", "ssdl-7", "ssdl-8", "ssdl-9", "ssdl-10", "ssdl-11", "ssdl-12", "ssdl-13", "ssdl-14", "ssdl-15", "envlab-1", "envlab-2", "envlab-3", "envlab-4", "envlab-5", "envlab-6"],
     meta: [
       ["Location", "Al-Sailiya & Mesaimeer, Qatar"],
       ["Role", "BIM Architectural Coordinator"],
-      ["Company", "Focus Design Partners"],
+      ["Company", "Focus Design Partners (design consultant)"],
       ["Client", "Qatar Building Engineering Company for PWA (Ashghal)"],
-      ["Building", "SSDL: 2 basements + ground + 2 floors, ~100 × 100 m footprint; plus a ~1,950 m² Environmental Laboratories extension"],
+      ["Building", "~3,500 m² facility on a ~187,000 m² site · 2 basements + ground + 2 floors; plus a ~1,950 m² Environmental Laboratories extension"],
       ["Model", "LOD 350, issued for approval"],
       ["Value", "~QAR 100m"],
       ["Year", "2025 – present (project initiated 2024)"],
       ["Software", "Revit, Navisworks Manage, BIM 360 / ACC"]
     ],
-    desc: "Qatar's first neutron-calibration facility: the Secondary Standards Dosimetry Laboratories calibrate and verify radiation measurement equipment for healthcare and research, organised around a central atrium with four wings for laboratories, research, administration and support. The scope also includes a major extension to the Environmental Laboratories in Mesaimeer.",
+    desc: "Qatar's first neutron-calibration facility. The Secondary Standards Dosimetry Laboratories calibrate and verify radiation measurement equipment so that radiation used in medicine and research is safe, accurate and traceable. The plan takes the atom as its idea: a central atrium acts as the nucleus, with four wings for laboratories, research, administration, operations and support, separating public, controlled and high-security zones. Modular laboratory units allow the facility to grow, and deep-set openings in the solid facade give shade and privacy in a contemporary Qatari language. The scope also includes a major extension to the Environmental Laboratories in Mesaimeer.",
     bullets: [
-      "Architectural BIM coordination and cross-discipline clash resolution across architecture, structure and MEP.",
+      "Architectural BIM coordination and cross-discipline clash resolution across architecture, structure, MEP and specialist laboratory systems (shielding, HVAC, controlled environments).",
       "Delivered 4D sequencing and 5D data development to support programme and cost tracking.",
       "Generated and delivered COBie data for facility handover."
     ]
@@ -72,19 +72,19 @@ window.PROJECTS = {
   },
 
   nmdc: {
-    title: "NMDC 2B01 Experience Centre, New Murabba (Mukaab)",
-    images: [],
-    morePlaceholder: "[an image of NMDC 2B01 you're allowed to share]",
+    title: "New Murabba Activation Center (NMDC 2B01)",
+    images: ["nmdc-1"],
     meta: [
-      ["Location", "Riyadh, Saudi Arabia"],
-      ["Role", "BIM Architectural Coordinator, interior fit-out"],
-      ["Company", "Focus Design Partners"],
+      ["Location", "Downtown Riyadh, Saudi Arabia"],
+      ["Role", "BIM Architectural Coordinator, interior fit-out model"],
+      ["Company", "Focus Design Partners, via Tilke Focus Design (Tilke GmbH + Focus Design Partners)"],
       ["Client", "New Murabba, via TXG and ICAD"],
-      ["Scope", "Interior fit-out of one building within a ~SAR 5bn development"],
+      ["Scope", "Interior design and MEP engineering; my part: fit-out model of one building (2B01) within a ~SAR 5bn development"],
       ["Model", "LOD 300 → LOD 400"],
-      ["Year", "[year]"]
+      ["Year", "2026 – present (awarded January 2026)"],
+      ["Image", "Illustrative view of New Murabba and The Mukaab, not project imagery"]
     ],
-    desc: "The 2B01 Experience Centre at New Murabba (Mukaab) in Riyadh: interior fit-out of one building within a ~SAR 5bn development, modelled and coordinated against the wider project's facade, MEP, core and shell and structural models.",
+    desc: "A landmark hub in downtown Riyadh that presents the New Murabba masterplan and The Mukaab to stakeholders, investors, tenants and the public. Five interconnected buildings tell the story as an immersive, interactive sequence: VVIP lounges, digital galleries, mock-up apartments and curated installations, with modular exhibition design and high-tech systems so the spaces can host large events as well as everyday visits.",
     bullets: [
       "Interior design modelling and coordination for the architectural fit-out.",
       "Coordinate architectural and MEP fit-out models against the facade, ICAD plumbing/MEP, ICAD core and shell, steel structure and concrete structure models."
@@ -137,7 +137,6 @@ window.PROJECTS = {
   cpk: {
     title: "CPK Airport (Foster + Partners)",
     images: ["cpk-1"],
-    morePlaceholder: "[more CPK images, if you're allowed to share them]",
     meta: [
       ["Location", "Poland"],
       ["Role", "BIM Consultant"],
@@ -220,43 +219,73 @@ window.PROJECTS = {
   },
 
   bjelasnica: {
-    title: "Bjelašnica Ski-Resort Masterplan Study",
+    title: "Bjelašnica Ski-Resort Masterplan, Competition Entry",
     images: ["bjelasnica-1", "bjelasnica-2", "bjelasnica-3", "bjelasnica-4", "bjelasnica-5"],
     meta: [
       ["Location", "Bjelašnica, Bosnia & Herzegovina"],
       ["Role", "Project Designer"],
       ["Company", "Tekton Studio, Sarajevo"],
-      ["Year", "2019 – 2022 [exact year]"]
+      ["Type", "Competition proposal, whole-site masterplan"],
+      ["Software", "Blender (terrain), Revit"],
+      ["Year", "2019 – 2022"]
     ],
-    desc: "A masterplan study for a ski resort on Bjelašnica: four renders of the resort village, lifts and ski slopes, and the masterplan of ski runs across the mountain. [a few lines on the brief, your design approach and your role]",
-    bullets: []
+    desc: "A competition proposal to redesign the whole Bjelašnica site as one resort: ski areas and lifts, a park and hotels, set out in a single masterplan. The terrain was modelled accurately in Blender and imported into Revit, where every building in the proposal was modelled on the real topography.",
+    bullets: [
+      "Built the masterplan on an accurate site model: terrain from Blender, buildings modelled in Revit.",
+      "Modelled each part of the proposal (ski resort, park, hotels) for the renders and the masterplan."
+    ]
   },
 
   breka: {
-    title: "Residential Building, Breka",
+    title: "Residential Complex, Breka",
     images: ["breka-1", "breka-2", "breka-3", "breka-4", "breka-5", "breka-6"],
     meta: [
       ["Location", "Breka, Sarajevo, Bosnia & Herzegovina"],
-      ["Role", "Project Designer"],
+      ["Role", "Project Designer, technical design & coordination"],
       ["Company", "Tekton Studio, Sarajevo"],
-      ["Building", "3 underground garage levels + ground floor + 10 upper floors (~31.6 m)"],
-      ["Year", "2019 – 2022 [exact year]"]
+      ["Building", "3 underground levels + ground floor + 10 upper floors (~31.6 m)"],
+      ["Year", "2019 – 2022"]
     ],
-    desc: "A residential building on a sloping site in Breka, Sarajevo, shown in three elevations, two floor plans and a section. [a few lines on the brief, your design approach and your role]",
-    bullets: []
+    desc: "A residential complex built into a hillside in Breka, Sarajevo, on ground prone to soil erosion. The hardest part was below ground: underground levels for parking and rental units, and foundations on piles to make the slope buildable.",
+    bullets: [
+      "Technical design: resolving the technical issues of the underground levels and piled foundations on an eroding slope.",
+      "Drawings and coordination, including plumbing and MEP."
+    ]
   },
 
   vrace: {
-    title: "Residential Villa [project name]",
+    title: "Villa Vraca",
     images: ["vrace-1", "vrace-2", "vrace-3", "vrace-4", "vrace-5"],
     meta: [
-      ["Location", "Sarajevo, Bosnia & Herzegovina [confirm]"],
-      ["Role", "Project Designer"],
+      ["Location", "Vraca, Sarajevo, Bosnia & Herzegovina"],
+      ["Role", "Project Designer, sole designer of concept & schematic design"],
       ["Company", "Tekton Studio, Sarajevo"],
-      ["Building", "Two units (Lamela A and B): garage level + ground floor + first floor, flat roof, pool"],
-      ["Year", "2019 – 2022 [exact year]"]
+      ["Building", "Two large apartments (Lamela A and B): garage level + ground floor + first floor, flat roof, pool"],
+      ["Status", "Foundations built"],
+      ["Year", "2019 – 2022"]
     ],
-    desc: "A two-unit residential villa on a sloping site in brick and glass, shown in three renders, a floor plan and sections. [a few lines on the brief, your design approach and your role]",
-    bullets: []
+    desc: "A new villa replacing a demolished house high above Sarajevo. The building is split into two large apartments, one in each half, both looking out over the whole city. Few slopes in Sarajevo get enough sun, so solar studies set the orientation and layout.",
+    bullets: [
+      "Developed the concept and schematic design on my own and presented it to the client.",
+      "Ran solar studies to orient the apartments for daylight and views.",
+      "Shared the Revit model with the structural engineers for review and approval; construction started and the foundations were built."
+    ]
+  },
+  thesis: {
+    title: "Optimising Contemporary Housing: Terraced Houses in Goražde",
+    images: ["thesis-1", "thesis-2", "thesis-3", "thesis-4", "thesis-5", "thesis-6", "thesis-7", "thesis-8"],
+    meta: [
+      ["Type", "M.Arch thesis, conceptual project of terraced houses"],
+      ["School", "Faculty of Architecture, University of Sarajevo"],
+      ["Mentors", "Doc. dr. Vedad Islambegović; Van. prof. Slađana Miljanović"],
+      ["Location", "Rasadnik settlement, Goražde, Bosnia & Herzegovina"],
+      ["Site", "~34,000 m², former agricultural land"],
+      ["Year", "2022 / 23"]
+    ],
+    desc: "A settlement of terraced houses on former farmland on the edge of Goražde, between individual family houses and a supermarket. The volumes are kept low so they don't dominate their surroundings. Entrances face the internal road; the ground floor holds service areas and garages built into the houses, and the upper floors hold living spaces or groups of bedrooms, in two house types.",
+    bullets: [
+      "Masterplan, two house types, floor plans and sections, and renders.",
+      "Structure of load-bearing reinforced-concrete and masonry walls with slabs: the concrete walls carry the cantilevered volumes without extra beams, keeping the interiors free of visual obstacles."
+    ]
   }
 };
