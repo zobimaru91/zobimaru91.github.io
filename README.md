@@ -32,6 +32,10 @@ All paths in `index.html` are relative (`assets/...`), so the site works on GitH
    ```
    GitHub rebuilds the site in about a minute. Check progress on the repo's **Actions** tab.
 
+### After every update: bump the version
+
+`index.html` loads `style.css`, `projects.js` and `main.js` with `?v=YYYYMMDD-n` at the end. Change that number (all three) whenever you edit those files, so browsers fetch the new version instead of an old saved copy.
+
 ### Filling in placeholders
 
 Everything still missing is marked in **yellow with a dashed border** on the page. In the HTML, search for `class="ph"` (text) and `class="media-slot"` (image/video boxes). Current list:
