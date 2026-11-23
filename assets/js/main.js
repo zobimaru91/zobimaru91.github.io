@@ -30,6 +30,7 @@
   if (y) y.textContent = new Date().getFullYear();
 
   setupProjectModal();
+  setupHeroSlideshow();
 
   if (!('IntersectionObserver' in window)) {
     document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
@@ -196,4 +197,82 @@ function setupProjectModal() {
   // Open from a shared link like #project-uqda
   var m = location.hash.match(/^#project-([\w-]+)$/);
   if (m && data[m[1]]) open(m[1]);
+}
+
+// ---------- Hero slideshow ----------
+// One image per project; a new slide comes in from the right every 3 seconds.
+// To change the order or add a project, edit SLIDES (image base name in assets/img + caption).
+function setupHeroSlideshow() {
+  var fig = document.querySelector('[data-slideshow]');
+  if (!fig) return;
+  var frame = fig.querySelector('.hero__frame');
+  var cap = fig.querySelector('figcaption');
+  var SLIDES = [
+    ['uqda-1', 'Al Uqda Equestrian Complex, Phase 4 · Qatar · BIM Lead'],
+    ['karaana-1', 'Al Karaana Camel Race Track · Qatar · BIM Coordinator'],
+    ['ssdl-1', 'SSDL, Secondary Standards Dosimetry Laboratories · Qatar · BIM Architectural Coordinator'],
+    ['envlab-1', 'Environmental Laboratory · Mesaimeer, Qatar · BIM Coordinator'],
+    ['ose-1', 'OSE, Outfield Spectator Experience · Qiddiya, Saudi Arabia · BIM Coordinator'],
+    ['amaala-2', 'Amaala Staff Village · Saudi Arabia · Architect / BIM Coordinator'],
+    ['khalifa-1', 'Khalifa City Residential Development · Abu Dhabi · Senior Architect / Designer'],
+    ['ghaf-1', 'MAF Ghaf Woods · Dubai · Architect / BIM Coordinator'],
+    ['pja-1', 'Palm Jebel Ali, Fronds A–F · Dubai · BIM Modeler / Coordinator'],
+    ['meryam-1', 'Meryam Island · Sharjah · Architect / BIM Modeler'],
+    ['cpk-1', 'CPK Airport (Foster + Partners) · Poland · BIM Consultant'],
+    ['vrace-1', 'Villa Vraca · Sarajevo · Project Designer'],
+    ['breka-1', 'Residential Complex, Breka · Sarajevo · Project Designer'],
+    ['bjelasnica-1', 'Bjelašnica Ski-Resort Masterplan · Competition entry'],
+    ['thesis-3', 'M.Arch thesis: terraced houses, Goražde']
+  ];
+  // People who ask their system for less motion keep the static first image
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var IMG = 'assets/img/';
+  var els = [frame.querySelector('.hero__slide')];
+  var index = 0, timer = null;
+
+  function slide(i) {
+    if (els[i]) return els[i];
+    var name = SLIDES[i][0];
+    var im = document.createElement('img');
+    im.className = 'hero__slide';
+    im.alt = SLIDES[i][1].split(' · ')[0];
+    im.decoding = 'async';
+    im.sizes = '(min-width: 900px) 55vw, 100vw';
+    im.srcset = IMG + name + '-800.webp 800w, ' + IMG + name + '-1600.webp 1600w';
+    im.src = IMG + name + '-1600.webp';
+    frame.appendChild(im);
+    els[i] = im;
+    return im;
+  }
+
+  function next() {
+    var n = (index + 1) % SLIDES.length;
+    var cur = els[index], nxt = slide(n);
+    // Wait until the next image has loaded so it never slides in blank
+    var ready = nxt.complete && nxt.naturalWidth ? Promise.resolve() : (nxt.decode ? nxt.decode().catch(function () {}) : Promise.resolve());
+    ready.then(function () {
+      // Park the incoming slide on the right without animating, then slide both
+      nxt.classList.remove('is-leaving');
+      nxt.style.transition = 'none';
+      nxt.style.transform = 'translateX(100%)';
+      void nxt.offsetWidth;
+      nxt.style.transition = '';
+      nxt.style.transform = '';
+      cur.classList.remove('is-active');
+      cur.classList.add('is-leaving');
+      nxt.classList.add('is-active');
+      cap.classList.add('is-fading');
+      setTimeout(function () { cap.textContent = SLIDES[n][1]; cap.classList.remove('is-fading'); }, 400);
+      index = n;
+      slide((n + 1) % SLIDES.length); // start loading the one after
+    });
+  }
+
+  function start() { if (!timer) timer = setInterval(next, 3000); }
+  function stop() { clearInterval(timer); timer = null; }
+  // Pause while the tab is in the background
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  slide(1);
+  start();
 }
