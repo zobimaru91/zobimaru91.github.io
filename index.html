@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261123-3">
+<link rel="stylesheet" href="assets/css/style.css?v=20261123-5">
 <link rel="preload" as="image" href="assets/img/uqda-1-1600.webp" imagesrcset="assets/img/uqda-1-800.webp 800w, assets/img/uqda-1-1600.webp 1600w" imagesizes="(min-width: 900px) 55vw, 100vw">
 
 <script type="application/ld+json">
@@ -336,11 +336,11 @@
       </article>
 
       <article class="tool reveal">
-        <div class="tool__head"><p class="tool__tag">Navisworks plugin · AI-assisted</p><h3>Automatic Clash Grouping</h3></div>
+        <div class="tool__head"><p class="tool__tag">Navisworks Manage plugin · C# · AI-assisted</p><h3>Group Existing Clashes</h3></div>
         <dl class="tool__spec">
-          <dt>Problem</dt><dd>Grouping existing clashes by hand, for example by Revit phase, is slow and repetitive.</dd>
-          <dt>What it does</dt><dd>Groups existing clashes automatically, for example by Revit phase.</dd>
-          <dt>Impact</dt><dd>Clash sets are organised and ready for review without manual sorting.</dd>
+          <dt>Problem</dt><dd>When you take over a federated model that already has clash results, new clashes get lost among the existing ones, and regrouping them by hand in every test is slow.</dd>
+          <dt>What it does</dt><dd>One click in the Add-ins tab, across every clash test in the open file (including tests in folders): puts the existing clashes into one group per test, with the name and status you choose (New, Active, Reviewed, Approved, Resolved, or keep the current status). It asks before touching existing groups: overwrite them, or keep them and their statuses as they are and group only the ungrouped clashes. A progress window shows clashes done, percentage and time left, with Cancel; the whole change is a single undo step, and your choices are remembered for the next project.</dd>
+          <dt>Impact</dt><dd>Existing clashes are parked in one step. After new NWC files are loaded and the tests re-run, anything that shows as New outside the group is a genuinely new clash to review.</dd>
         </dl>
       </article>
 
@@ -557,7 +557,7 @@
   </div>
 </dialog>
 
-<script src="assets/js/projects.js?v=20261123-3" defer></script>
-<script src="assets/js/main.js?v=20261123-3" defer></script>
+<script src="assets/js/projects.js?v=20261123-5" defer></script>
+<script src="assets/js/main.js?v=20261123-5" defer></script>
 </body>
 </html>
