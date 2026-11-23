@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261123-5">
+<link rel="stylesheet" href="assets/css/style.css?v=20261123-6">
 <link rel="preload" as="image" href="assets/img/uqda-1-1600.webp" imagesrcset="assets/img/uqda-1-800.webp 800w, assets/img/uqda-1-1600.webp 1600w" imagesizes="(min-width: 900px) 55vw, 100vw">
 
 <script type="application/ld+json">
@@ -94,6 +94,14 @@
   </div>
 
   <div class="wrap">
+    <nav class="quick" aria-label="Jump to a section">
+      <a href="#design">Design projects<span aria-hidden="true">↓</span></a>
+      <a href="#coordination">BIM coordination<span aria-hidden="true">↓</span></a>
+      <a href="#automation">Automation<span aria-hidden="true">↓</span></a>
+      <a href="#downloads">Tools catalogue<span aria-hidden="true">↓</span></a>
+      <a href="#experience">Experience &amp; skills<span aria-hidden="true">↓</span></a>
+      <a href="#contact">Contact<span aria-hidden="true">↓</span></a>
+    </nav>
     <ul class="stats reveal">
       <li><strong>~7</strong><span>years of AEC delivery</span></li>
       <li><strong>5</strong><span>countries: Qatar, UAE, Saudi Arabia, Poland, Bosnia &amp; Herzegovina</span></li>
@@ -381,27 +389,30 @@
       <p class="chapter__no">Tools &amp; services</p>
       <h2 id="dl-title">Tools catalogue</h2>
       <div class="chapter__intro">
-        <p>The plugins and scripts above are my own tools. A catalogue listing each Revit and Navisworks plugin and each Dynamo script, with a short description of what it does, is in preparation and will be published here soon. I also develop custom plugins and Dynamo scripts to your requirements, on a freelance basis.</p>
+        <p>The plugins and scripts above are my own tools, and I share them free of charge under fair-use <a href="terms.html">terms of use</a>. Open a category to see each tool and what it does; the ones marked available can be downloaded straight away, and the rest are being prepared for release. I also develop custom plugins and Dynamo scripts to your requirements, on a freelance basis.</p>
       </div>
     </header>
 
     <div class="dl-grid reveal">
       <article class="dl-card">
         <p class="tool__tag">Revit</p>
-        <h4>Revit plugins</h4>
-        <p>Custom add-ins (C#, Revit API) for worksharing, modelling and documentation workflows.</p>
-        <span class="btn btn--disabled" aria-disabled="true">Coming soon</span>
+        <h4><button class="dl-card__open" type="button" data-tools="revit">Revit plugins</button></h4>
+        <p>Add-ins (C#, Revit API) for worksharing, modelling and documentation workflows.</p>
+        <p class="dl-card__count">1 plugin · coming soon</p>
+        <button class="btn btn--ghost" type="button" data-tools="revit">View Revit plugins</button>
       </article>
       <article class="dl-card">
         <p class="tool__tag">Navisworks</p>
-        <h4>Navisworks plugins</h4>
+        <h4><button class="dl-card__open" type="button" data-tools="navisworks">Navisworks plugins</button></h4>
         <p>Clash reporting, clash grouping and clash-data transfer tools for coordination teams.</p>
-        <span class="btn btn--disabled" aria-disabled="true">Coming soon</span>
+        <p class="dl-card__count">3 plugins · <strong>1 free download</strong></p>
+        <button class="btn" type="button" data-tools="navisworks">View Navisworks plugins</button>
       </article>
       <article class="dl-card">
         <p class="tool__tag">Dynamo</p>
         <h4>Dynamo scripts</h4>
         <p>Parameters, sheets and revisions, DWG cleanup, Excel–Revit exchange and repetitive modelling tasks.</p>
+        <p class="dl-card__count">Script list in preparation</p>
         <span class="btn btn--disabled" aria-disabled="true">Coming soon</span>
       </article>
     </div>
@@ -557,7 +568,25 @@
   </div>
 </dialog>
 
-<script src="assets/js/projects.js?v=20261123-5" defer></script>
-<script src="assets/js/main.js?v=20261123-5" defer></script>
+<!-- Tools catalogue pop-up (filled by assets/js/main.js from assets/js/tools.js) -->
+<dialog class="tm" id="tools-modal" aria-labelledby="tm-title">
+  <div class="tm__inner">
+    <header class="tm__head">
+      <p class="kicker">Tools catalogue</p>
+      <h2 id="tm-title" class="tm__title"></h2>
+      <p class="tm__intro"></p>
+    </header>
+    <div class="tm__terms">
+      <label class="tm__agree"><input type="checkbox" class="tm__check"><span>I have read and agree to the <a href="terms.html" target="_blank" rel="noopener">terms of use</a> (free, fair use, no warranty).</span></label>
+      <p class="tm__note">Tick the box to enable downloads. Try every tool on a copy of your model first.</p>
+    </div>
+    <ul class="tm__list"></ul>
+    <button class="pm__close tm__close" type="button" aria-label="Close">✕</button>
+  </div>
+</dialog>
+
+<script src="assets/js/tools.js?v=20261123-6" defer></script>
+<script src="assets/js/projects.js?v=20261123-6" defer></script>
+<script src="assets/js/main.js?v=20261123-6" defer></script>
 </body>
 </html>

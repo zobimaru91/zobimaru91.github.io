@@ -31,6 +31,7 @@
 
   setupProjectModal();
   setupHeroSlideshow();
+  setupToolsCatalogue();
 
   if (!('IntersectionObserver' in window)) {
     document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
@@ -275,4 +276,86 @@ function setupHeroSlideshow() {
   document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
   slide(1);
   start();
+}
+
+// ---------- Tools catalogue pop-up ----------
+// Cards with data-tools="navisworks" / "revit" open a list from assets/js/tools.js.
+// Downloads stay disabled until the visitor ticks "I agree to the terms of use".
+function setupToolsCatalogue() {
+  var data = window.TOOLS;
+  var dlg = document.getElementById('tools-modal');
+  if (!data || !dlg || typeof dlg.showModal !== 'function') return;
+  var list = dlg.querySelector('.tm__list');
+  var check = dlg.querySelector('.tm__check');
+  var terms = dlg.querySelector('.tm__terms');
+  var opener = null;
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+  }
+
+  function setLinks() {
+    list.querySelectorAll('.tm__dl').forEach(function (a) {
+      if (check.checked) { a.setAttribute('href', a.getAttribute('data-href')); a.removeAttribute('aria-disabled'); a.classList.remove('btn--disabled'); }
+      else { a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); a.classList.add('btn--disabled'); }
+    });
+  }
+
+  function open(id, from) {
+    var c = data[id];
+    if (!c) return;
+    opener = from || null;
+    dlg.querySelector('.tm__title').textContent = c.title;
+    dlg.querySelector('.tm__intro').textContent = c.intro;
+    var anyFile = false;
+    list.innerHTML = c.items.map(function (t) {
+      var ready = t.status === 'available' && t.file;
+      if (ready) anyFile = true;
+      var fname = ready ? t.file.split('/').pop() : '';
+      return '<li class="tm__item' + (ready ? ' is-ready' : '') + '">' +
+        '<div class="tm__row"><h3>' + esc(t.name) + (t.version ? ' <span class="tm__ver">v' + esc(t.version) + '</span>' : '') + '</h3>' +
+        '<span class="tm__badge' + (ready ? ' tm__badge--ok' : '') + '">' + (ready ? 'Free download' : 'Coming soon') + '</span></div>' +
+        '<p>' + esc(t.desc) + '</p>' +
+        (t.req ? '<p class="tm__req"><strong>Requires:</strong> ' + esc(t.req) + '</p>' : '') +
+        (t.includes ? '<p class="tm__req"><strong>Includes:</strong> ' + esc(t.includes) + '</p>' : '') +
+        (ready ? '<a class="btn tm__dl" role="button" data-href="' + esc(t.file) + '" download="' + esc(fname) + '">Download ZIP' + (t.size ? ' (' + esc(t.size) + ')' : '') + '</a>' : '') +
+        '</li>';
+    }).join('');
+    terms.hidden = !anyFile;
+    setLinks();
+    document.documentElement.classList.add('modal-open');
+    if (!dlg.open) dlg.showModal();
+    dlg.querySelector('.tm__inner').scrollTop = 0;
+    dlg.querySelector('.tm__close').focus();
+    if (history.replaceState) history.replaceState(null, '', '#tools-' + id);
+  }
+
+  function close() { if (dlg.open) dlg.close(); }
+
+  check.addEventListener('change', setLinks);
+  // A click on a disabled download points the visitor to the terms box
+  list.addEventListener('click', function (e) {
+    var a = e.target.closest('.tm__dl');
+    if (a && !check.checked) {
+      e.preventDefault();
+      terms.classList.remove('is-nudged'); void terms.offsetWidth; terms.classList.add('is-nudged');
+      terms.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      check.focus({ preventScroll: true });
+    }
+  });
+  dlg.addEventListener('close', function () {
+    document.documentElement.classList.remove('modal-open');
+    if (history.replaceState && location.hash.indexOf('#tools-') === 0) history.replaceState(null, '', location.pathname + location.search + '#downloads');
+    if (opener) opener.focus({ preventScroll: true });
+  });
+  dlg.querySelector('.tm__close').addEventListener('click', close);
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+
+  document.querySelectorAll('[data-tools]').forEach(function (b) {
+    b.addEventListener('click', function () { open(b.getAttribute('data-tools'), b); });
+  });
+
+  // Open from a shared link like #tools-navisworks
+  var m = location.hash.match(/^#tools-([\w-]+)$/);
+  if (m && data[m[1]]) open(m[1]);
 }

@@ -85,7 +85,9 @@ Keep each file under ~5 MB. GitHub's file limit is 100 MB and a Pages site shoul
 
 ### Tools catalogue (section id `downloads`)
 
-Plugins and Dynamo scripts are not offered as free downloads. The section has three cards (Revit plugins, Navisworks plugins, Dynamo scripts) with disabled "Coming soon" labels (`span.btn.btn--disabled`) until the catalogue of scripts and plugins is ready, plus a "Custom Dynamo scripts & BIM automation" contact panel (a `mailto:` link with a pre-filled subject).
+The tools are free under fair-use terms (`terms.html`). The Revit and Navisworks cards open a pop-up listing each tool (data in `assets/js/tools.js`); shareable links: `#tools-navisworks`, `#tools-revit`. Downloads stay disabled until the visitor ticks "I agree to the terms of use". Zips live in `assets/downloads/` and each contains `TERMS_OF_USE.txt`.
+
+To release a tool: add its zip to `assets/downloads/`, set `status: 'available'` plus `file`, `size`, `version`, `req`, `includes` in `tools.js`, update the card's count line in `index.html`, then bump `?v=`. The Dynamo card is a disabled "Coming soon" label until the script list is added.
 
 ### Updating the CV PDF
 
