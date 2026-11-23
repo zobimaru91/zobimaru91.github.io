@@ -374,7 +374,22 @@ html.modal-open { overflow: hidden; }
 }
 .pm__close:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
 
+/* Pop-up for a project without images: text only, narrower */
+.pm.pm--noimg { width: min(760px, calc(100vw - 48px)); height: auto; max-height: calc(100vh - 48px); }
+.pm--noimg .pm__inner { display: block; height: auto; }
+.pm--noimg .pm__gallery { display: none; }
+.pm--noimg .pm__text { padding-top: 64px; max-height: calc(100vh - 48px); }
+/* Project card still waiting for an image */
+.project__img--empty {
+  display: flex; align-items: center; justify-content: center; padding: 24px; text-align: center;
+  border: 1px dashed var(--ph-line);
+  background: repeating-linear-gradient(-45deg, #fffaf0, #fffaf0 10px, #fff6e0 10px, #fff6e0 20px);
+}
+
 @media (max-width: 860px) {
+  .pm.pm--noimg { width: 100vw; height: 100vh; max-height: none; }
+  .pm--noimg .pm__inner { height: 100%; }
+  .pm--noimg .pm__text { max-height: none; }
   .pm { width: 100vw; height: 100dvh; height: 100vh; }
   @supports (height: 100dvh) { .pm { height: 100dvh; } }
   .pm__inner { display: block; overflow-y: auto; }

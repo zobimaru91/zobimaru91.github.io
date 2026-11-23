@@ -97,7 +97,8 @@ function setupProjectModal() {
     var b = document.createElement('button');
     b.type = 'button';
     b.className = 'view-btn';
-    b.setAttribute('aria-label', 'View project: ' + plain(p.title) + ' (' + p.images.length + (p.images.length === 1 ? ' image)' : ' images)'));
+    var ni = p.images.length;
+    b.setAttribute('aria-label', 'View project: ' + plain(p.title) + (ni ? ' (' + ni + (ni === 1 ? ' image)' : ' images)') : ''));
     b.innerHTML = '<span>View project +</span>';
     box.appendChild(b);
     card.addEventListener('click', function (e) {
@@ -151,7 +152,9 @@ function setupProjectModal() {
     dlg.querySelector('.pm__inner').scrollTop = 0;
     document.documentElement.classList.add('modal-open');
     if (!dlg.open) dlg.showModal();
-    show(0);
+    // Projects without images open as text only
+    dlg.classList.toggle('pm--noimg', !p.images.length);
+    if (p.images.length) show(0); else { img.removeAttribute('src'); count.textContent = ''; }
     dlg.querySelector('.pm__close').focus();
     if (history.replaceState) history.replaceState(null, '', '#project-' + id);
   }
