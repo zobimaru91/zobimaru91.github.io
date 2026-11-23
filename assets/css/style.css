@@ -499,3 +499,10 @@ html.modal-open { overflow: hidden; }
 .terms h2 { font-size: 20px; margin: 32px 0 8px; }
 .terms p, .terms li { color: var(--ink-2); font-size: 16px; line-height: 1.6; }
 .terms__back { margin-top: 40px; }
+
+.tm__terms-title { font: 600 15px var(--font-display); margin: 0 0 8px; }
+.tm__terms-list { margin: 0 0 14px; padding-left: 18px; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.tm__terms-list li { margin-bottom: 4px; }
+.terms__summary { background: var(--tint); border-left: 3px solid var(--accent); padding: 20px 24px; margin-bottom: 16px; }
+.terms__summary h2 { margin-top: 0; }
+.terms__summary li { margin-bottom: 6px; }
