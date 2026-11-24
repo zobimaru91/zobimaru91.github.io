@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20261123-7">
+<link rel="stylesheet" href="assets/css/style.css?v=20261124-1">
 <link rel="preload" as="image" href="assets/img/uqda-1-1600.webp" imagesrcset="assets/img/uqda-1-800.webp 800w, assets/img/uqda-1-1600.webp 1600w" imagesizes="(min-width: 900px) 55vw, 100vw">
 
 <script type="application/ld+json">
@@ -326,38 +326,38 @@
 
     <div class="tools">
       <article class="tool reveal">
-        <div class="tool__head"><p class="tool__tag">Revit plugin · C# · Revit API · AI-assisted</p><h3>One-button Sync &amp; Relinquish</h3></div>
+        <div class="tool__head"><p class="tool__tag">Revit plugin · C# · Revit API · AI-assisted · free download</p><h3>Faruk Syncinator 6000: one-button Sync &amp; Relinquish</h3></div>
         <dl class="tool__spec">
           <dt>Problem</dt><dd>Syncing with Central and releasing worksharing ownership is a repeated, multi-step routine for every user on a workshared model.</dd>
-          <dt>What it does</dt><dd>Syncs with Central and relinquishes in a single click.</dd>
+          <dt>What it does</dt><dd>One button on its own ribbon tab: Synchronize with Central, then Relinquish All Mine (borrowed elements, worksets and settings), then a "Sync complete" message. If Revit reports a problem, it shows the error and stops.</dd>
           <dt>Impact</dt><dd>Deployed and in daily use across the 50-person practice at Focus Design Partners: one click instead of a multi-step routine.</dd>
         </dl>
       </article>
 
       <article class="tool reveal">
-        <div class="tool__head"><p class="tool__tag">Navisworks plugin · AI-assisted</p><h3>Clash Report Export</h3></div>
+        <div class="tool__head"><p class="tool__tag">Navisworks Manage plugin · C# · AI-assisted · free download</p><h3>Faruk ClashReport 6000inator: clash report export</h3></div>
         <dl class="tool__spec">
           <dt>Problem</dt><dd>Navisworks' default clash report is hard to read for reviewers outside the BIM team.</dd>
-          <dt>What it does</dt><dd>Exports a clear, viewer-friendly clash report: for each clash, what it is, who it is assigned to and which discipline should resolve it.</dd>
+          <dt>What it does</dt><dd>Exports an HTML report with a picture per clash, plus a CSV for Excel, organised by clash test and clash group (whose scope). Each clash shows status, distance, location, description, assignee, comments, source files and the Revit Element ID of the instance itself, so Select by ID in Revit finds it. You pick the tests and statuses to export.</dd>
           <dt>Impact</dt><dd>Built for reviewers and modellers who don't work in Navisworks: they can open the report, check their clashes and act on them without learning the software.</dd>
         </dl>
       </article>
 
       <article class="tool reveal">
-        <div class="tool__head"><p class="tool__tag">Navisworks Manage plugin · C# · AI-assisted</p><h3>Group Existing Clashes</h3></div>
+        <div class="tool__head"><p class="tool__tag">Navisworks Manage plugin · C# · AI-assisted · free download</p><h3>Group Existing Clashes</h3></div>
         <dl class="tool__spec">
           <dt>Problem</dt><dd>When you take over a federated model that already has clash results, new clashes get lost among the existing ones, and regrouping them by hand in every test is slow.</dd>
-          <dt>What it does</dt><dd>One click in the Add-ins tab, across every clash test in the open file (including tests in folders): puts the existing clashes into one group per test, with the name and status you choose (New, Active, Reviewed, Approved, Resolved, or keep the current status). It asks before touching existing groups: overwrite them, or keep them and their statuses as they are and group only the ungrouped clashes. A progress window shows clashes done, percentage and time left, with Cancel; the whole change is a single undo step, and your choices are remembered for the next project.</dd>
+          <dt>What it does</dt><dd>One click in the Tool Add-ins tab: for every clash test in the open file, puts all clashes into one group with the name you type and the status you pick (New, Active, Reviewed, Approved or Resolved).</dd>
           <dt>Impact</dt><dd>Existing clashes are parked in one step. After new NWC files are loaded and the tests re-run, anything that shows as New outside the group is a genuinely new clash to review.</dd>
         </dl>
       </article>
 
       <article class="tool reveal">
-        <div class="tool__head"><p class="tool__tag">Navisworks plugin · AI-assisted</p><h3>Clash Data Transfer</h3></div>
+        <div class="tool__head"><p class="tool__tag">Navisworks Manage plugin · C# · AI-assisted · free download</p><h3>Clash Status Export / Import</h3></div>
         <dl class="tool__spec">
-          <dt>Problem</dt><dd>Clash results, comments and approvals don't carry across Navisworks versions, or from an NWD into an NWF file.</dd>
-          <dt>What it does</dt><dd>Exports clashes with their results, comments/responses and approvals from a newer Navisworks (e.g. 2025) and imports them into an older version (e.g. 2023); also transfers the same clashes and results from NWD to NWF.</dd>
-          <dt>Impact</dt><dd>Review history (results, comments, approvals) is kept across versions and files instead of being re-entered.</dd>
+          <dt>Problem</dt><dd>Clash statuses agreed in one file, such as approvals in a client's NWD, don't carry into your own NWF.</dd>
+          <dt>What it does</dt><dd>Exports clash statuses from the source file to a .tsv, then imports them into your file by matching each clash on its pair of Revit Element IDs, and writes a log of what was matched.</dd>
+          <dt>Impact</dt><dd>Approvals are carried over instead of being re-entered clash by clash.</dd>
         </dl>
       </article>
 
@@ -389,7 +389,7 @@
       <p class="chapter__no">Tools &amp; services</p>
       <h2 id="dl-title">Tools catalogue</h2>
       <div class="chapter__intro">
-        <p>The plugins and scripts above are my own tools, and I share them free of charge under simple <a href="terms.html">terms of use</a> (free to use and share, not for sale, at your own risk). Open a category to see each tool and what it does; the ones marked available can be downloaded straight away, and the rest are being prepared for release. I also develop custom plugins and Dynamo scripts to your requirements, on a freelance basis.</p>
+        <p>The plugins and scripts above are my own tools, and I share them free of charge under simple <a href="terms.html">terms of use</a> (free to use and share unchanged, not for sale, at your own risk). Open a category to see each tool and what it does; the ones marked available can be downloaded straight away, and the rest are being prepared for release. I also develop custom plugins and Dynamo scripts to your requirements, on a freelance basis.</p>
       </div>
     </header>
 
@@ -398,14 +398,14 @@
         <p class="tool__tag">Revit</p>
         <h4><button class="dl-card__open" type="button" data-tools="revit">Revit plugins</button></h4>
         <p>Add-ins (C#, Revit API) for worksharing, modelling and documentation workflows.</p>
-        <p class="dl-card__count">1 plugin · coming soon</p>
-        <button class="btn btn--ghost" type="button" data-tools="revit">View Revit plugins</button>
+        <p class="dl-card__count">Faruk Syncinator 6000 · <strong>free download</strong></p>
+        <button class="btn" type="button" data-tools="revit">View Revit plugins</button>
       </article>
       <article class="dl-card">
         <p class="tool__tag">Navisworks</p>
         <h4><button class="dl-card__open" type="button" data-tools="navisworks">Navisworks plugins</button></h4>
-        <p>Clash reporting, clash grouping and clash-data transfer tools for coordination teams.</p>
-        <p class="dl-card__count">3 plugins · <strong>1 free download</strong></p>
+        <p>Clash reporting, clash grouping and clash-status transfer tools for coordination teams.</p>
+        <p class="dl-card__count">3 plugins in one installer · <strong>free download</strong></p>
         <button class="btn" type="button" data-tools="navisworks">View Navisworks plugins</button>
       </article>
       <article class="dl-card">
@@ -579,8 +579,8 @@
     <div class="tm__terms">
       <p class="tm__terms-title">Terms of use, in short</p>
       <ul class="tm__terms-list">
-        <li><strong>Free</strong> to use and to share with anyone, free of charge, including on paid project work.</li>
-        <li><strong>Not for sale:</strong> no selling, no charging for access, and no including the tools in paid products, bundles or courses. Keep the author credit.</li>
+        <li><strong>Free</strong> to use, copy and share with anyone, free of charge, including on paid project work.</li>
+        <li><strong>Not for sale, no changes:</strong> no selling, no charging for access, and no including the tools in paid products, bundles or courses. Share them only unchanged, as downloaded; don't modify, decompile or repackage them. Keep the author credit.</li>
         <li><strong>At your own risk:</strong> provided as is, with no guarantee. I take no responsibility for anything that happens to your projects, models, files or data. Work on a copy and keep backups.</li>
       </ul>
       <label class="tm__agree"><input type="checkbox" class="tm__check"><span>I have read and agree to the full <a href="terms.html" target="_blank" rel="noopener">terms of use</a>.</span></label>
@@ -591,8 +591,8 @@
   </div>
 </dialog>
 
-<script src="assets/js/tools.js?v=20261123-7" defer></script>
-<script src="assets/js/projects.js?v=20261123-7" defer></script>
-<script src="assets/js/main.js?v=20261123-7" defer></script>
+<script src="assets/js/tools.js?v=20261124-1" defer></script>
+<script src="assets/js/projects.js?v=20261124-1" defer></script>
+<script src="assets/js/main.js?v=20261124-1" defer></script>
 </body>
 </html>

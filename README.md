@@ -85,7 +85,7 @@ Keep each file under ~5 MB. GitHub's file limit is 100 MB and a Pages site shoul
 
 ### Tools catalogue (section id `downloads`)
 
-The tools are free under fair-use terms (`terms.html`). The Revit and Navisworks cards open a pop-up listing each tool (data in `assets/js/tools.js`); shareable links: `#tools-navisworks`, `#tools-revit`. Downloads stay disabled until the visitor ticks "I agree to the terms of use". Zips live in `assets/downloads/` and each contains `TERMS_OF_USE.txt`.
+The tools are free to use and share unchanged, not for sale, no modification (`terms.html`). The Revit and Navisworks cards open a pop-up listing each tool (data in `assets/js/tools.js`); shareable links: `#tools-navisworks`, `#tools-revit`. Downloads stay disabled until the visitor ticks "I agree to the terms of use". Zips live in `assets/downloads/` and each contains `TERMS_OF_USE.txt`. Current downloads: `FarukBIMTools_v1.0.0.zip` (one installer for the three Navisworks tools; the tools inside are listed with `status: 'included'`) and `FarukSyncinator6000_v1.0.0.zip` (Revit). Items can show a screenshot with `img` / `imgAlt`.
 
 To release a tool: add its zip to `assets/downloads/`, set `status: 'available'` plus `file`, `size`, `version`, `req`, `includes` in `tools.js`, update the card's count line in `index.html`, then bump `?v=`. The Dynamo card is a disabled "Coming soon" label until the script list is added.
 

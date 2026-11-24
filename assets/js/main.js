@@ -312,10 +312,12 @@ function setupToolsCatalogue() {
       var ready = t.status === 'available' && t.file;
       if (ready) anyFile = true;
       var fname = ready ? t.file.split('/').pop() : '';
-      return '<li class="tm__item' + (ready ? ' is-ready' : '') + '">' +
+      var incl = t.status === 'included';
+      return '<li class="tm__item' + (ready ? ' is-ready' : '') + (incl ? ' is-included' : '') + '">' +
         '<div class="tm__row"><h3>' + esc(t.name) + (t.version ? ' <span class="tm__ver">v' + esc(t.version) + '</span>' : '') + '</h3>' +
-        '<span class="tm__badge' + (ready ? ' tm__badge--ok' : '') + '">' + (ready ? 'Free download' : 'Coming soon') + '</span></div>' +
+        '<span class="tm__badge' + (ready ? ' tm__badge--ok' : '') + '">' + (ready ? 'Free download' : incl ? 'In the installer' : 'Coming soon') + '</span></div>' +
         '<p>' + esc(t.desc) + '</p>' +
+        (t.img ? '<img class="tm__img" src="' + esc(t.img) + '" alt="' + esc(t.imgAlt || '') + '" loading="lazy" decoding="async">' : '') +
         (t.req ? '<p class="tm__req"><strong>Requires:</strong> ' + esc(t.req) + '</p>' : '') +
         (t.includes ? '<p class="tm__req"><strong>Includes:</strong> ' + esc(t.includes) + '</p>' : '') +
         (ready ? '<a class="btn tm__dl" role="button" data-href="' + esc(t.file) + '" download="' + esc(fname) + '">Download ZIP' + (t.size ? ' (' + esc(t.size) + ')' : '') + '</a>' : '') +
