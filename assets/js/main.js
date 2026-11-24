@@ -317,6 +317,7 @@ function setupToolsCatalogue() {
         '<div class="tm__row"><h3>' + esc(t.name) + (t.version ? ' <span class="tm__ver">v' + esc(t.version) + '</span>' : '') + '</h3>' +
         '<span class="tm__badge' + (ready ? ' tm__badge--ok' : '') + '">' + (ready ? 'Free download' : incl ? 'In the installer' : 'Coming soon') + '</span></div>' +
         '<p>' + esc(t.desc) + '</p>' +
+        (t.steps && t.steps.length ? '<p class="tm__steps-title">How it works</p><ol class="tm__steps">' + t.steps.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>' : '') +
         (t.img ? '<img class="tm__img" src="' + esc(t.img) + '" alt="' + esc(t.imgAlt || '') + '" loading="lazy" decoding="async">' : '') +
         (t.req ? '<p class="tm__req"><strong>Requires:</strong> ' + esc(t.req) + '</p>' : '') +
         (t.includes ? '<p class="tm__req"><strong>Includes:</strong> ' + esc(t.includes) + '</p>' : '') +
