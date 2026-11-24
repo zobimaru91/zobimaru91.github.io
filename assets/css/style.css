@@ -156,6 +156,9 @@ ul, ol, dl { margin: 0; padding: 0; }
 .quick a:hover, .quick a:focus-visible { border-color: var(--ink); background: var(--ink); color: #fff; }
 .quick a:hover span, .quick a:focus-visible span { color: #fff; transform: translateY(2px); }
 @media (max-width: 559px) { .quick { display: grid; grid-template-columns: 1fr 1fr; } .quick a { justify-content: space-between; padding: 0 14px; font-size: 14px; } }
+/* Quick links fill the full content width, edge to edge with the stats line below */
+@media (min-width: 560px) { .quick a { flex: 1 1 auto; justify-content: space-between; } }
+@media (min-width: 1000px) { .quick { display: grid; grid-template-columns: repeat(6, 1fr); } }
 
 .stats {
   list-style: none; display: grid; grid-template-columns: repeat(2, 1fr);
